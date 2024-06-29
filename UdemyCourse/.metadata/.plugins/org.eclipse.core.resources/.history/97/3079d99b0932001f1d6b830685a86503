@@ -1,0 +1,66 @@
+package neevsystems.SeleniumFrameWork;
+
+import java.io.IOException;
+import java.time.Duration;
+import java.util.List;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
+import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
+import org.testng.Assert;
+import org.testng.annotations.Test;
+
+import neevsystems.PageObjectModelSec19.CartPage;
+import neevsystems.PageObjectModelSec19.CheckOutPage;
+import neevsystems.PageObjectModelSec19.ConfirmationPage;
+import neevsystems.PageObjectModelSec19.LandingPage;
+import neevsystems.PageObjectModelSec19.ProductCatalog;
+import neevsystems.TestComponentsSec20.BaseTest;
+
+
+
+public class StandAloneSubmitOrder extends BaseTest {
+	@Test
+	public void SubmitOrder() throws IOException {
+		
+		String productName="ZARA COAT 3";
+		LandingPage landingPage=LaunchApplication();
+		//WebDriverManager.chromedriver().setup();
+        System.setProperty("webdriver.chrome.driver","./drivers/ChromeDriver.exe");
+		
+		ChromeOptions options = new ChromeOptions();
+		options.addArguments("--remote-allow-origins=*");
+		
+		WebDriver driver = new ChromeDriver(options);
+		//WebDriver driver = new ChromeDriver();
+		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(20));
+		driver.manage().window().maximize();
+		//driver.get("https://rahulshettyacademy.com/client");
+		//login
+		//LandingPage landingPage=new LandingPage(driver);
+		landingPage.GoTo();
+		
+		ProductCatalog productCatalog=landingPage.LoginApplication("nd.rojalizu@gmail.com", "Mnbvcxz@1");
+		List<WebElement> products=productCatalog.getProductList();
+		productCatalog.addProductToCart(productName);
+		CartPage cartPage=productCatalog.goToCartPage();
+		Boolean match=cartPage.VerifyProductDisplay(productName);
+		Assert.assertTrue(match);
+		CheckOutPage checkOutPage=cartPage.goToCheckOut();
+		checkOutPage.selectCountry("india");
+		ConfirmationPage confirmationPage=checkOutPage.submitOrder();
+		String confirmationMessage=confirmationPage.getConfirmationMessage();
+		Assert.assertTrue(confirmationMessage.equalsIgnoreCase("THANKYOU FOR THE ORDER."));
+		driver.close();	
+		
+		
+		
+	}
+		
+
+}

@@ -1,0 +1,30 @@
+package neevsystems.TestComponentsSec20;
+
+import java.io.FileInputStream;
+import java.io.IOException;
+import java.time.Duration;
+import java.util.Properties;
+
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
+
+public class BaseTest {
+	
+	public void initializeDriver() throws IOException
+	{
+		//properties class
+		
+		Properties prop=new Properties();
+		FileInputStream fis=new FileInputStream("D:\\UdemyCourse\\SeleniumFrameWork\\src\\main\\java\\neevsystems\\resourcesSec20\\GlobalData.properties");
+		prop.load(fis);
+		prop.getProperty("browser");//->it need inputstream for that we have to create object for input stream
+		 System.setProperty("webdriver.chrome.driver","./drivers/ChromeDriver.exe");
+			ChromeOptions options = new ChromeOptions();
+			options.addArguments("--remote-allow-origins=*");
+			WebDriver driver = new ChromeDriver(options);
+			driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(20));
+			driver.manage().window().maximize();
+	}
+
+}

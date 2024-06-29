@@ -1,0 +1,70 @@
+package neevsystems.SeleniumFrameWork;
+
+import java.time.Duration;
+import java.util.List;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
+import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
+import org.testng.Assert;
+
+import neevsystems.PageObjectModelSec19.CartPage1;
+import neevsystems.PageObjectModelSec19.CheckoutPage1;
+import neevsystems.PageObjectModelSec19.ConfirmationPage1;
+import neevsystems.PageObjectModelSec19.LandingPage1;
+import neevsystems.PageObjectModelSec19.ProductCatalogue1;
+
+
+
+public class SubmitOrderTest {
+	public static void main(String[] args) throws InterruptedException {
+		String productName="ZARA COAT 3";
+        System.setProperty("webdriver.chrome.driver","./drivers/ChromeDriver.exe");
+		ChromeOptions options = new ChromeOptions();
+		options.addArguments("--remote-allow-origins=*");
+		WebDriver driver = new ChromeDriver(options);
+		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(20));
+		driver.manage().window().maximize();
+		
+		//login
+		LandingPage1 landingPage1=new LandingPage1(driver);
+		//url
+		landingPage1.goTo();
+		ProductCatalogue1 productCatalogue1=landingPage1.loginApplication("nd.rojalizu@gmail.com", "Mnbvcxz@1");
+		//Get list of products
+		//ProductCatalogue1 productCatalogue1=new ProductCatalogue1(driver);
+		List<WebElement>products=productCatalogue1.getproductList();
+		//add product to cart
+		productCatalogue1.addProductToCart(productName);
+		//click on cart
+		CartPage1 cartPage1=productCatalogue1.goToCartPage();
+		//product name was same as selected product
+		//CartPage1 cartPage1=new CartPage1(driver);
+		Boolean match=cartPage1.VerifyProductDisplay(productName);
+		Assert.assertTrue(match);
+		CheckoutPage1 checkoutPage1=cartPage1.goToCheckOut();
+		checkoutPage1.selectCountry("india");
+		ConfirmationPage1 confirmationPage1=checkoutPage1.submitOrder();
+		
+	
+		Actions a = new Actions(driver);
+		a.sendKeys(driver.findElement(By.cssSelector("[placeholder='Select Country']")), "india").build().perform();
+
+		//wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector(".ta-results")));
+		//place order
+		driver.findElement(By.xpath("(//button[contains(@class,'ta-item')])[2]")).click();
+		driver.findElement(By.cssSelector(".action__submit")).click();
+
+		String confirmMessage = driver.findElement(By.cssSelector(".hero-primary")).getText();
+		Assert.assertTrue(confirmMessage.equalsIgnoreCase("THANKYOU FOR THE ORDER."));
+		driver.close();	
+		
+	}
+		
+
+}

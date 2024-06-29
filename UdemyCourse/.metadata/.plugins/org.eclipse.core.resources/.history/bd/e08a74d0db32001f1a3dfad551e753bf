@@ -1,0 +1,12 @@
+package neevsystems.dataSec21Json;
+
+import com.google.common.io.FileUtils;
+
+public class DataReader {
+	public void getJsonDataToMap()
+	{
+		//read json to string
+		FileUtils.readFileToString(new File(""))
+	}
+
+}

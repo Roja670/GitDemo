@@ -1,0 +1,49 @@
+package neevsystems.ExtentReportsSec22;
+
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
+import org.testng.annotations.Test;
+
+import com.aventstack.extentreports.reporter.ExtentSparkReporter;
+
+@BeforeMethod
+public void config()  
+{
+	
+		System.setProperty("webdriver.chrome.driver","./drivers/ChromeDriver.exe");
+		
+		ChromeOptions options = new ChromeOptions();
+		options.addArguments("--remote-allow-origins=*");
+		
+		WebDriver driver = new ChromeDriver(options);
+		driver.get("https://rahulshettyacademy.com/");
+		System.out.println(driver.getTitle());
+		
+		//Threre are two classes using to get extent reports
+		//ExtentReports     //ExtentSparkReport
+		String path=System.getProperty("user.dir")+"\\reports\\index.html";
+		ExtentSparkReporter reporter= new ExtentSparkReporter(path);
+		//to change the name of the report
+		reporter.config().setReportName("Web Automation Results");
+		//To change the title
+		reporter.config().setDocumentTitle("Test Results");
+		
+		ExtentReports extent=new ExtentReports();
+		extent
+	}
+}
+	@Test
+	public void initialDemo()
+	
+
+		
+		
+		
+		
+		
+		
+	}
+}
+
+

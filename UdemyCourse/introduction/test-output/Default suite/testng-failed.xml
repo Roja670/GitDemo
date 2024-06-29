@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite parallel="none" name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
+  <test parallel="none" name="Default test(failed)">
+    <classes>
+      <class name="frameworkTestNGSec16.day3">
+        <methods>
+          <include name="APIcarLoan"/>
+          <include name="MobilesignoutcarLoan"/>
+          <include name="beforeevery"/>
+          <include name="afteclas"/>
+          <include name="befoclas"/>
+          <include name="afterevery"/>
+          <include name="WebloginCarLoan"/>
+          <include name="Bfsuite"/>
+        </methods>
+      </class> <!-- frameworkTestNGSec16.day3 -->
+    </classes>
+  </test> <!-- Default test(failed) -->
+</suite> <!-- Failed suite [Default suite] -->

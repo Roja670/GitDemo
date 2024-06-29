@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results total="3" passed="3" failed="0" skipped="0">
+  <reporter-output>
+  </reporter-output>
+  <suite started-at="2024-06-26T13:47:47Z" name="Suite" finished-at="2024-06-26T13:47:47Z" duration-ms="62">
+    <groups>
+      <group name="Smoke">
+        <method signature="day2.ploan()[pri:0, instance:frameworkTestNGSec16.day2@69c81773]" name="ploan" class="frameworkTestNGSec16.day2"/>
+        <method signature="day3.MobileLogincarLoan()[pri:0, instance:frameworkTestNGSec16.day3@30f842ca]" name="MobileLogincarLoan" class="frameworkTestNGSec16.day3"/>
+        <method signature="day4.MobileLoginHomeLoan()[pri:0, instance:frameworkTestNGSec16.day4@72c8e7b]" name="MobileLoginHomeLoan" class="frameworkTestNGSec16.day4"/>
+      </group> <!-- Smoke -->
+    </groups>
+    <test started-at="2024-06-26T13:47:47Z" name="Regression" finished-at="2024-06-26T13:47:47Z" duration-ms="62">
+      <class name="frameworkTestNGSec16.day2">
+        <test-method signature="ploan()[pri:0, instance:frameworkTestNGSec16.day2@69c81773]" started-at="2024-06-26T19:17:47Z" name="ploan" finished-at="2024-06-26T19:17:47Z" duration-ms="15" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- ploan -->
+      </class> <!-- frameworkTestNGSec16.day2 -->
+      <class name="frameworkTestNGSec16.day3">
+        <test-method signature="MobileLogincarLoan()[pri:0, instance:frameworkTestNGSec16.day3@30f842ca]" started-at="2024-06-26T19:17:47Z" name="MobileLogincarLoan" finished-at="2024-06-26T19:17:47Z" duration-ms="4" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- MobileLogincarLoan -->
+      </class> <!-- frameworkTestNGSec16.day3 -->
+      <class name="frameworkTestNGSec16.day4">
+        <test-method signature="MobileLoginHomeLoan()[pri:0, instance:frameworkTestNGSec16.day4@72c8e7b]" started-at="2024-06-26T19:17:47Z" name="MobileLoginHomeLoan" finished-at="2024-06-26T19:17:47Z" duration-ms="2" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- MobileLoginHomeLoan -->
+      </class> <!-- frameworkTestNGSec16.day4 -->
+    </test> <!-- Regression -->
+  </suite> <!-- Suite -->
+</testng-results>

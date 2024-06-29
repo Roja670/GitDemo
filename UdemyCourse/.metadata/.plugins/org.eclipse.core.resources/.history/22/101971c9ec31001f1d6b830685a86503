@@ -1,0 +1,49 @@
+package neevsystems.PageObjectModelSec19;
+
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.PageFactory;
+
+import neevsystems.AbstractComponents.AbstractComponent;
+
+public class LandingPage extends AbstractComponent {
+	//local variable
+	WebDriver driver;
+	//create constructor  initialization
+	//this refers to the current class instance variables
+	public LandingPage(WebDriver driver)
+	{
+		super(driver);
+		//call the driver using this
+		this.driver=driver;
+		PageFactory.initElements(driver,this);
+	}
+	
+	//page factory
+	@FindBy(id="userEmail")
+	WebElement userEmail;
+	
+	@FindBy(id="userPassword")
+	WebElement PasswordEle;
+	
+	@FindBy(id="login")
+	WebElement Submit;
+	
+	
+	public ProductCatalog LoginApplication(String email,String Password)
+	{
+		userEmail.sendKeys(email);
+		PasswordEle.sendKeys(Password);
+		Submit.click();
+		ProductCatalog productCatalog=new ProductCatalog(driver);
+		return productCatalog;
+		
+	}
+	public void GoTo()
+	{
+		driver.get("https://rahulshettyacademy.com/client");
+	}
+	
+
+}

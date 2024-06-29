@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite parallel="none" name="Failed suite [Suite]" guice-stage="DEVELOPMENT">
+  <test parallel="none" name="PersionalLoan(failed)">
+    <classes>
+      <class name="frameworkTestNGSec16.day3">
+        <methods>
+          <include name="APIcarLoan"/>
+          <include name="MobilesignoutcarLoan"/>
+          <include name="beforeevery"/>
+          <include name="afteclas"/>
+          <include name="befoclas"/>
+          <include name="afterevery"/>
+          <include name="WebloginCarLoan"/>
+          <include name="Bfsuite"/>
+        </methods>
+      </class> <!-- frameworkTestNGSec16.day3 -->
+      <class name="frameworkTestNGSec16.day4">
+        <methods>
+          <include name="WebloginHomeLoan"/>
+        </methods>
+      </class> <!-- frameworkTestNGSec16.day4 -->
+      <class name="frameworkTestNGSec16.day2">
+        <methods>
+          <include name="prerequiste"/>
+        </methods>
+      </class> <!-- frameworkTestNGSec16.day2 -->
+      <class name="frameworkTestNGSec16.day1">
+        <methods>
+          <include name="Demo"/>
+          <include name="lastexecution"/>
+          <include name="afSyite"/>
+        </methods>
+      </class> <!-- frameworkTestNGSec16.day1 -->
+    </classes>
+  </test> <!-- PersionalLoan(failed) -->
+</suite> <!-- Failed suite [Suite] -->

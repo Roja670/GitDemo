@@ -1,0 +1,17 @@
+package neevsystems.PageObjectModelSec19;
+
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.support.PageFactory;
+
+public class ConfirmationPage1 {
+	
+	WebDriver driver;
+	public ConfirmationPage1(WebDriver driver)
+	{
+		super(driver);
+		this.driver=driver;
+		PageFactory.initElements(driver, this);
+		
+	}
+
+}

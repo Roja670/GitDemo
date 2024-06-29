@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results ignored="3" total="5" passed="2" failed="0" skipped="0">
+  <reporter-output>
+  </reporter-output>
+  <suite started-at="2024-06-26T13:45:17Z" name="Suite" finished-at="2024-06-26T13:45:45Z" duration-ms="27939">
+    <groups>
+      <group name="Purchase">
+        <method signature="StandAloneSubmitOrder.submitOrder(java.util.HashMap)[pri:0, instance:neevsystems.SeleniumFrameWork.StandAloneSubmitOrder@1b66c0fb]" name="submitOrder" class="neevsystems.SeleniumFrameWork.StandAloneSubmitOrder"/>
+      </group> <!-- Purchase -->
+    </groups>
+    <test started-at="2024-06-26T13:45:17Z" name="Error Validation Test" finished-at="2024-06-26T13:45:17Z" duration-ms="9">
+    </test> <!-- Error Validation Test -->
+    <test started-at="2024-06-26T13:45:17Z" name="Submit Order Test" finished-at="2024-06-26T13:45:45Z" duration-ms="27939">
+      <class name="neevsystems.SeleniumFrameWork.StandAloneSubmitOrder">
+        <test-method is-config="true" signature="launchApplication()[pri:0, instance:neevsystems.SeleniumFrameWork.StandAloneSubmitOrder@1b66c0fb]" started-at="2024-06-26T13:45:17Z" name="launchApplication" finished-at="2024-06-26T13:45:30Z" duration-ms="12396" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- launchApplication -->
+        <test-method signature="submitOrder(java.util.HashMap)[pri:0, instance:neevsystems.SeleniumFrameWork.StandAloneSubmitOrder@1b66c0fb]" started-at="2024-06-26T13:45:30Z" name="submitOrder" data-provider="getData" finished-at="2024-06-26T13:45:34Z" duration-ms="4158" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[{password=Mnbvcxz@1, product=ZARA COAT 3, email=nd.rojalizu@gmail.com}]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- submitOrder -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:neevsystems.SeleniumFrameWork.StandAloneSubmitOrder@1b66c0fb]" started-at="2024-06-26T13:45:34Z" name="tearDown" finished-at="2024-06-26T13:45:34Z" duration-ms="255" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method is-config="true" signature="launchApplication()[pri:0, instance:neevsystems.SeleniumFrameWork.StandAloneSubmitOrder@1b66c0fb]" started-at="2024-06-26T13:45:34Z" name="launchApplication" finished-at="2024-06-26T13:45:40Z" duration-ms="6018" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- launchApplication -->
+        <test-method signature="submitOrder(java.util.HashMap)[pri:0, instance:neevsystems.SeleniumFrameWork.StandAloneSubmitOrder@1b66c0fb]" started-at="2024-06-26T13:45:40Z" name="submitOrder" data-provider="getData" finished-at="2024-06-26T13:45:45Z" duration-ms="4508" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[{password=Mnbvcxz@1, product=ADIDAS ORIGINAL, email=rojalin@gmail.com}]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- submitOrder -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:neevsystems.SeleniumFrameWork.StandAloneSubmitOrder@1b66c0fb]" started-at="2024-06-26T13:45:45Z" name="tearDown" finished-at="2024-06-26T13:45:45Z" duration-ms="265" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+      </class> <!-- neevsystems.SeleniumFrameWork.StandAloneSubmitOrder -->
+    </test> <!-- Submit Order Test -->
+  </suite> <!-- Suite -->
+</testng-results>
